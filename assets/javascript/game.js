@@ -4,6 +4,8 @@ var computerChoice = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o
 var guesses = 9;
 var wins = 0;
 var gameChoice=computerChoice[Math.floor(Math.random()*computerChoice.length)];
+var pastGuesses =[];
+
 
 
 var game = {
@@ -15,11 +17,18 @@ var game = {
 		var gameChoice=computerChoice[Math.floor(Math.random()*computerChoice.length)];
 		console.log(gameChoice);
 		alert("You were right!");
+		var pg = $("#pastguesses");
+		pg.empty();
+		pastGuesses = [];
 		
 		document.onkeyup = function(event) {
 		var userGuess = (event.key);
-		console.log(userGuess);
-
+		console.log(userGuess)
+		pastGuesses.push(userGuess);
+		var pg = $("#pastguesses");
+		pg.html(pastGuesses);
+		
+	
 
 
 
@@ -30,6 +39,8 @@ var game = {
 		winscore.html(wins);
 		var guessesleft= $("#guessscore");
 		guessesleft.html(guesses);
+		var pg = $("#pastguesses");
+		pg.empty();
 
 
 
@@ -41,9 +52,12 @@ var game = {
 		winscore.html(wins);
 		var guessesleft= $("#guessscore");
 		guessesleft.html(guesses);
-
-
+		var pg = $("#pastguesses");
+		pg.html(pastGuesses);
 } 
+
+
+
 
 
 
@@ -53,7 +67,9 @@ else if (guesses === 0) {
 	winscore.html(wins);
 	var guessesleft= $("#guessscore");
 	guessesleft.html(guesses);
-
+	pastGuesses = [];
+	var pg = $("#pastguesses");
+	pg.html(pastGuesses)
 
 
 }
@@ -69,6 +85,9 @@ else if (guesses === 0) {
 		winscore.html(wins);
 		var guessesleft= $("#guessscore");
 		guessesleft.html(guesses);
+		var pg = $("#pastguesses");
+		pg.html(pastGuesses);
+
 
 
 
@@ -78,12 +97,17 @@ else if (guesses === 0) {
 
 	gameLost: function(){
 		alert("You Lose!");
+		var pg = $("#pastguesses");
+		pg.empty();
+		pastguesses = [];
 		guesses =9;
 		var winscore= $("#winscore");
 		winscore.html(wins);
 		var guessesleft= $("#guessscore");
 		guessesleft.html(guesses);
+		;
 
+		
 
 	}
 
@@ -101,6 +125,11 @@ document.onkeyup = function(event) {
 	console.log(wins);
 	console.log(guesses);
 	console.log(gameChoice);
+	pastGuesses.push(userGuess);
+	console.log(pastGuesses);
+
+
+
 
 
 
@@ -110,6 +139,10 @@ if (userGuess === gameChoice) {
 	winscore.html(wins);
 	var guessesleft= $("#guessscore");
 	guessesleft.html(guesses);
+	var pg = $("#pastguesses");
+	pg.empty();
+
+	
 	
 }
 
@@ -119,23 +152,32 @@ if (userGuess !== gameChoice) {
 	winscore.html(wins);
 	var guessesleft= $("#guessscore");
 	guessesleft.html(guesses);
+	var pg = $("#pastguesses");
+	pg.html(pastGuesses);
 } 
 
 
 
 if(guesses === 0) {
+	var pg = $("#pastguesses");
+	pg.html();
 	game.gameLost();
 	var winscore= $("#winscore");
 	winscore.html(wins);
+	
+
 }
 };
-
 
 var winscore= $("#winscore");
 winscore.html(wins);
 
+
 var guessesleft= $("#guessscore");
 guessesleft.html(guesses);
 
+
+var pg = $("#pastguesses");
+	pg.html(pastGuesses);
 
 
