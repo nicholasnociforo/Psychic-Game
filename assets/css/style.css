@@ -1,0 +1,41 @@
+
+body {
+	background-image: url("http://www.cosmotography.com/images/close_new_m101.jpg")
+}
+
+#banner {
+	font-family: "Eagle Lake", sans-serif;
+	text-align: center;;
+	color: white;
+	border-image-source: url("https://coraskywalker.files.wordpress.com/2010/05/deneb3.jpg");
+	font-size: 30px;
+
+}
+
+#instructions {
+	font-family: "Eagle Lake", sans-serif;
+	color: white;
+	text-align: center;
+	margin-top: 100px;
+	
+}
+
+#game {
+	font-family: "Eagle Lake", sans-serif;
+	color: white;
+	border-style: solid;
+	border-color: white;
+	
+	display: block;
+	left: 327px;
+	font-size: 37px;
+	background-color: black;
+	width: 300px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;;
+
+}
+
+
+
