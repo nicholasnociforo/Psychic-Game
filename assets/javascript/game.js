@@ -83,10 +83,8 @@ else if (guesses === 0) {
 		game.gameLost();
 		var winscore= $("#winscore");
 		winscore.html(wins);
-		var guessesleft= $("#guessscore");
-		guessesleft.html(guesses);
 		var pg = $("#pastguesses");
-		pg.html(pastGuesses);
+		pg.empty();
 
 
 
@@ -99,7 +97,7 @@ else if (guesses === 0) {
 		alert("You Lose!");
 		var pg = $("#pastguesses");
 		pg.empty();
-		pastguesses = [];
+		pastGuesses = [];
 		guesses =9;
 		var winscore= $("#winscore");
 		winscore.html(wins);
@@ -160,7 +158,7 @@ if (userGuess !== gameChoice) {
 
 if(guesses === 0) {
 	var pg = $("#pastguesses");
-	pg.html();
+	pg.empty();
 	game.gameLost();
 	var winscore= $("#winscore");
 	winscore.html(wins);
